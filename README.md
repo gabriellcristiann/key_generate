@@ -37,3 +37,9 @@ Certifique-se de proteger adequadamente a chave privada (private_key.pem) e nunc
 ___
 
 Autor: Gabriel Cristian
+
+___
+
+## Licença
+
+Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
