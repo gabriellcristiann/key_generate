@@ -18,14 +18,14 @@ def generate_key_pair():
     private_key = rsa.generate_private_key(
         public_exponent=65537,
         key_size=2048,
-        backend=default_backend
+        backend=default_backend()
     )
     public_key = private_key.public_key()
 
     with open('private_key.pem', 'wb') as file:
         file.write(
             private_key.private_bytes(
-                enconding=serialization.Enconding.PEM,
+                encoding=serialization.Encoding.PEM,
                 format=serialization.PrivateFormat.TraditionalOpenSSL,
                 encryption_algorithm=serialization.NoEncryption()
             )
@@ -34,7 +34,7 @@ def generate_key_pair():
     with open('public_key.pem', 'wb') as file:
         file.write(
             public_key.public_bytes(
-                enconding=serialization.Enconding.PEM,
+                encoding=serialization.Encoding.PEM,
                 format=serialization.PublicFormat.SubjectPublicKeyInfo
             )
         )
@@ -43,3 +43,4 @@ def generate_key_pair():
 
 private_key, public_key = generate_key_pair()
 print("Chaves geradas e exportadas com sucesso!")
+
