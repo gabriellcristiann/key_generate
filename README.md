@@ -1,38 +1,49 @@
 # Gerador de Chaves RSA
 
-Este script Python gera um par de chaves pública e privada RSA de 2048 bits e as exporta para arquivos no formato PEM.
+Este script Python gera um par de chaves pública e privada RSA de 2048 bits a partir do nome fornecido pelo usuário e as exporta para um arquivo .zip.
 
 ## Requisitos
 
+ - python 3.12
+ - poetry
+
 Certifique-se de ter o módulo `cryptography` instalado. Você pode instalar utilizando o seguinte comando:
 
-```python
-pip install cryptography
+```sh
+poetry install
 ```
-
-ou 
-
-```python
-pip install -r requirements.txt
-```
-
 
 ## Uso
 
-1. Execute o script `generate_key_pair.py` para gerar as chaves.
+1. Execute o script main.py para gerar as chaves.
 
-2. Após a execução, as chaves serão armazenadas nos arquivos `private_key.pem` (chave privada) e `public_key.pem` (chave pública).
+2. Após a execução, as chaves serão armazenadas em um arquivo .zip com o nome fornecido pelo usuário.
 
 ## Exemplo de Uso
 
-```python
-from generate_key_pair import generate_key_pair
+```sh
+python key_generate/main.py
+```
+ou 
 
-private_key, public_key = generate_key_pair()
-print("Chaves geradas e exportadas com sucesso!")
+```sh
+task run
 ```
 
-Certifique-se de proteger adequadamente a chave privada (private_key.pem) e nunca compartilhá-la publicamente.
+Ao executar este comando o script ira perguntar o nome da aplicação para o qual as chaves serão geradas, o nome fornecido será utilizado na criação do arquivo `zip` com as chaves.
+
+Pronto suas chaves estão criadas!
+
+> Certifique-se de proteger adequadamente a chave privada e nunca compartilhá-la publicamente.
+
+## Testes
+
+Você pode rodar os testes utilizando o comando:
+
+```sh
+task test
+```
+Isso executará os testes definidos em tests/test_main.py.
 
 ___
 
