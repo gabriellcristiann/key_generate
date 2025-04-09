@@ -47,7 +47,7 @@ Isso executará os testes definidos em tests/test_main.py.
 
 ___
 
-Autor: Gabriel Cristian
+Autor: [Gabriel Cristian](https://github.com/gabriellcristiann)
 
 ___
 
